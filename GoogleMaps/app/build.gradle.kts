@@ -1,6 +1,11 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
+
+    // to read secrets, we must add a plugin
+    // https://developers.google.com/maps/documentation/android-sdk/secrets-gradle-plugin
+    //    id("com.google.android.libraries.mapsplatform.secrets-gradle-plugin") version "2.0.1"
+    alias(libs.plugins.androidSecretsGradlePlugin)
 }
 
 android {
@@ -44,8 +49,8 @@ android {
 
 dependencies {
 
-    //  implementation ("com.google.android.gms:play-services-maps:19.2.0")
-    implementation (libs.play.services.maps)
+   //   implementation ("com.google.android.gms:play-services-maps:19.2.0")
+    implementation(libs.play.services.maps)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
